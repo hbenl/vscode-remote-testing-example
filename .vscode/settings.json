@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    ".git": true,
+    "node_modules": true
+  },
+  "mochaExplorer.files": "test/**/*.spec.ts",
+  "mochaExplorer.adapterScript": "container-adapter.js",
+  "mochaExplorer.env": {
+    "WHERE_AM_I": "host"
+  },
+  "mochaExplorer.debuggerPort": 9227
+}
