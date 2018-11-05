@@ -10,6 +10,7 @@ describe('Dummy tests', function () {
 	}
 
 	it('should only work in the container', function() {
+		debugger;
 		assert.equal(process.env.WHERE_AM_I, "container");
 	});
 

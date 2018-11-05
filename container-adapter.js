@@ -39,19 +39,19 @@ const workerArgs = {
 const workerArgsString = JSON.stringify(workerArgs);
 
 // start the worker process
-const execArgv = [];
-if (workerArgs.debuggerPort) {
-	execArgv.push(`--inspect-brk=${workerArgs.debuggerPort}`);
+let debugOption = '';
+if (origWorkerArgs.debuggerPort) {
+	debugOption = `--inspect=0.0.0.0:${origWorkerArgs.debuggerPort}`;
 }
 const childProc = spawn(
 	'docker-compose',
 	[ 
 		'exec', '-T', 'mocha-test-runner', 'bash', '-c',
-		`cd /home/circleci ; node - \'${workerArgsString}\'`
+		`cd /home/circleci ; node ${debugOption} - \'${workerArgsString}\'`
 	],
 	{
 		stdio: [ 'pipe', 'inherit', 'inherit', 'ipc' ],
-		execArgv
+		execArgv: []
 	}
 );
 

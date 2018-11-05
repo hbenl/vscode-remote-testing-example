@@ -8,5 +8,6 @@
   "mochaExplorer.env": {
     "WHERE_AM_I": "host"
   },
-  "mochaExplorer.debuggerPort": 9227
+  "mochaExplorer.debuggerPort": 9227,
+  "mochaExplorer.debuggerConfig": "Debug my tests"
 }
